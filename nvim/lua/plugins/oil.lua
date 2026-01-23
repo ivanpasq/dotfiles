@@ -13,6 +13,7 @@ return {
         ["q"] = "actions.close",
         ["<C-v>"] = "actions.select_vsplit",
         ["<C-s>"] = "actions.select_split",
+        ["<C-r"] = "actions.refresh",
       },
       win_options = {
         signcolumn = "yes:2",
