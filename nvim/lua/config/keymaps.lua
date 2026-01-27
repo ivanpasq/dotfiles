@@ -24,3 +24,12 @@ keymap("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+local scroll_moves_cursor = true
+
+if scroll_moves_cursor then
+	keymap("n", "<ScrollWheelUp>", "k", { desc = "Scroll up" })
+	keymap("n", "<ScrollWheelDown>", "j", { desc = "Scroll down" })
+	keymap("v", "<ScrollWheelUp>", "k", { desc = "Scroll up" })
+	keymap("v", "<ScrollWheelDown>", "j", { desc = "Scroll down" })
+end
