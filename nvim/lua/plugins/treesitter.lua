@@ -13,6 +13,7 @@ return {
 				"markdown",
 				"dockerfile",
 				"make",
+				"python",
 			}
 
 			for _, parser in ipairs(parsers) do

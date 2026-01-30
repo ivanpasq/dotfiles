@@ -5,12 +5,15 @@ return {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
 			"leoluz/nvim-dap-go",
+			"mfussenegger/nvim-dap-python",
 		},
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
 
 			require("dap-go").setup()
+
+			require("dap-python").setup("python3")
 
 			vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
 			vim.fn.sign_define(
@@ -79,6 +82,9 @@ return {
 			keymap("n", "<leader>dt", function()
 				require("dap-go").debug_test()
 			end, { desc = "Debug test" })
+			keymap("n", "<leader>dT", function()
+				require("dap-python").test_method()
+			end, { desc = "Debug Python test" })
 			keymap("n", "<leader>du", dapui.toggle, { desc = "Toggle DAP UI" })
 		end,
 	},

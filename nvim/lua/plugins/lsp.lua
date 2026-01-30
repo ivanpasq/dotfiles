@@ -14,6 +14,7 @@ return {
 					"lua_ls",
 					"gopls",
 					"yamlls",
+					"pyright",
 				},
 			})
 		end,
@@ -123,7 +124,21 @@ return {
 				},
 			})
 
-			vim.lsp.enable({ "lua_ls", "gopls", "yamlls" })
+			vim.lsp.config("pyright", {
+				capabilities = capabilities,
+				settings = {
+					python = {
+						analysis = {
+							typeCheckingMode = "basic",
+							autoSearchPaths = true,
+							useLibraryCodeForTypes = true,
+							diagnosticMode = "workspace",
+						},
+					},
+				},
+			})
+
+			vim.lsp.enable({ "lua_ls", "gopls", "yamlls", "pyright" })
 		end,
 	},
 }

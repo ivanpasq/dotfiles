@@ -8,6 +8,7 @@ return {
 				go = { "goimports", "gofumpt" },
 				lua = { "stylua" },
 				yaml = { "prettier" },
+				python = { "ruff_format", "riff_fix" },
 			},
 			format_on_save = {
 				timeout_ms = 1000,
