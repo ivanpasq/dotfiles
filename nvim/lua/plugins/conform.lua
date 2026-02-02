@@ -9,6 +9,7 @@ return {
 				lua = { "stylua" },
 				yaml = { "prettier" },
 				python = { "ruff_format", "riff_fix" },
+				rust = { "rustfmt" },
 			},
 			format_on_save = {
 				timeout_ms = 1000,

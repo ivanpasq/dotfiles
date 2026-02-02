@@ -15,6 +15,8 @@ return {
 				"dockerfile",
 				"make",
 				"python",
+				"rust",
+				"toml",
 			}
 
 			for _, parser in ipairs(parsers) do
@@ -24,7 +26,7 @@ return {
 			end
 
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "go", "lua", "yaml", "json", "markdown", "dockerfile", "make" },
+				pattern = { "go", "lua", "yaml", "json", "markdown", "dockerfile", "make", "rust", "toml" },
 				callback = function()
 					pcall(vim.treesitter.start)
 				end,
