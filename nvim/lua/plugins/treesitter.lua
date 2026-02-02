@@ -7,6 +7,7 @@ return {
 				"go",
 				"gomod",
 				"gosum",
+				"gotmpl",
 				"lua",
 				"yaml",
 				"json",

@@ -15,6 +15,7 @@ return {
 					"gopls",
 					"yamlls",
 					"pyright",
+					"helm_ls",
 				},
 			})
 		end,
@@ -138,7 +139,18 @@ return {
 				},
 			})
 
-			vim.lsp.enable({ "lua_ls", "gopls", "yamlls", "pyright" })
+			vim.lsp.config("helm_ls", {
+				capabilities = capabilities,
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							path = "yaml-language-server",
+						},
+					},
+				},
+			})
+
+			vim.lsp.enable({ "lua_ls", "gopls", "yamlls", "pyright", "helm_ls" })
 		end,
 	},
 }
